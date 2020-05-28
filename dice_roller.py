@@ -2,16 +2,19 @@ import random
 import tkinter as tk
 
 
+# Core dice roll function
 def roll_dice(max=6):
     return random.randint(1, max)
 
 
+# Takes dice roll and updates display
 def display_dice_roll():
     global number_output
     value = roll_dice()
     number_output["text"] = value
 
 
+# Start dice rolling animation
 def handle_click():
     for time in range(0, 501, 50):
         window.after(time, display_dice_roll)
