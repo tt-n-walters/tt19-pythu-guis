@@ -18,15 +18,15 @@ def setup_window():
     window.columnconfigure(1, weight=1)
     window.rowconfigure(1, weight=1)
 
-    number_ouput = tk.Label(window, text="Click the button to roll")
+    number_output = tk.Label(window, text="Click the button to roll")
     button = tk.Button(window, text="Roll die", command=handle_click)
 
-    number_ouput.grid(row=1, column=1)
+    number_output.grid(row=1, column=1)
     button.grid(row=1, column=0)
 
-    return window
+    return window, number_output
 
 
 if __name__ == "__main__":
-    window = setup_window()
+    window, number_output = setup_window()
     window.mainloop()
