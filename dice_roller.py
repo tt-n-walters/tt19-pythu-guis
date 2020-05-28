@@ -27,11 +27,13 @@ def setup_window():
     window.columnconfigure(1, weight=1)
     window.rowconfigure(1, weight=1)
 
-    number_output = tk.Label(
-        window,
-        text="Click the button to roll",
-        font=("Calibri", 16)
-    )
+    number_args = {
+        "text": "Click the button to roll",
+        "font": ("Calibri", 16),
+        "width": 1
+    }
+
+    number_output = tk.Label(window, **number_args)
     button = tk.Button(window, text="Roll die", command=handle_click, font=("Calibri", 16))
 
     number_output.grid(row=1, column=1)
