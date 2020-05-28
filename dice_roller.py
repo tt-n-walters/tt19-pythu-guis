@@ -30,13 +30,17 @@ def setup_window():
     number_args = {
         "text": "Click the button to roll",
         "font": ("Calibri", 16),
-        "width": 1
+        "bg": "orange"
     }
+    # Create a Frame to put the Label inside
+    frame = tk.Frame(window, width=200, height=50, bg="yellow")
+    frame.pack_propagate(0)
 
-    number_output = tk.Label(window, **number_args)
+    number_output = tk.Label(frame, **number_args)
+    number_output.pack(fill=tk.BOTH, expand=tk.YES)
     button = tk.Button(window, text="Roll die", command=handle_click, font=("Calibri", 16))
 
-    number_output.grid(row=1, column=1)
+    frame.grid(row=1, column=1)
     button.grid(row=1, column=0)
 
     return window, number_output
