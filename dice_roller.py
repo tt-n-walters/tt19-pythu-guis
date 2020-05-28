@@ -29,11 +29,10 @@ def setup_window():
 
     number_args = {
         "text": "Click the button to roll",
-        "font": ("Calibri", 16),
-        "bg": "orange"
+        "font": ("Calibri", 16)
     }
     # Create a Frame to put the Label inside
-    frame = tk.Frame(window, width=200, height=50, bg="yellow")
+    frame = tk.Frame(window, width=200, height=50)
     frame.pack_propagate(0)
 
     number_output = tk.Label(frame, **number_args)
