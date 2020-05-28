@@ -6,10 +6,16 @@ def roll_dice(max=6):
     return random.randint(1, max)
 
 
-def handle_click():
+def display_dice_roll():
     global number_output
     value = roll_dice()
     number_output["text"] = value
+
+
+def handle_click():
+    for time in range(0, 501, 50):
+        window.after(time, display_dice_roll)
+
 
 def setup_window():
     window = tk.Tk()
