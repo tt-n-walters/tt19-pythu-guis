@@ -15,6 +15,9 @@ def setup_window():
     number_ouput.pack()
     button.pack()
 
+    return window
+
 
 if __name__ == "__main__":
-    setup_window()
+    window = setup_window()
+    window.mainloop()
