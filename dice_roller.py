@@ -6,6 +6,11 @@ def roll_dice(max=6):
     return random.randint(1, max)
 
 
+def handle_click():
+    global number_output
+    value = roll_dice()
+    number_output["text"] = value
+
 def setup_window():
     window = tk.Tk()
     window.geometry("300x50")
@@ -14,7 +19,7 @@ def setup_window():
     window.rowconfigure(1, weight=1)
 
     number_ouput = tk.Label(window, text="Click the button to roll")
-    button = tk.Button(window, text="Roll die")
+    button = tk.Button(window, text="Roll die", command=handle_click)
 
     number_ouput.grid(row=1, column=1)
     button.grid(row=1, column=0)
